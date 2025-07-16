@@ -70,15 +70,3 @@ Initial seed data for resources added in OnModelCreating.
 
 
 ---
-## Screenshots
-
-### 🏠 Homepage
-![Homepage](Screenshots/Home_Page.png)
-
-### ➕ Add Resource Form
-![Add Resource](Screenshots/add-resource-form.png)
-
-### ⚠️ Booking Conflict Message
-![Conflict Message](Screenshots/booking-conflict.png)
-
-![Upcoming Bookings](./Screenshots/upcoming-bookings.png)
