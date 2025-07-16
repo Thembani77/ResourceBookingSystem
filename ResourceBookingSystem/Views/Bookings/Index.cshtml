@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ResourceBookingSystem.Models.Booking>
+
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999">
+        <div class="toast align-items-center text-white bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    @TempData["SuccessMessage"]
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+}
+
+<h2 class="mb-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Bookings Overview</h2>
+
+<!-- ✅ Filter Form -->
+<form asp-action="Filter" method="get" class="row g-3 mb-4 align-items-end">
+    <div class="col-md-4">
+        <label for="date">Filter by Date</label>
+        <input type="date" name="date" value="@ViewBag.FilterDate" class="form-control" />
+    </div>
+
+    <div class="col-md-4">
+        <label for="resourceId">Filter by Resource</label>
+        @Html.DropDownList("resourceId", ViewBag.ResourceId as SelectList, "-- All Resources --", new { @class = "form-control" })
+    </div>
+
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-outline-primary w-100">Search</button>
+    </div>
+
+    <div class="col-md-2">
+        <a href="@Url.Action("Index")" class="btn btn-outline-secondary w-100">Reset</a>
+    </div>
+</form>
+
+
+
+<!-- ✅ Create Button -->
+<a asp-action="Create" class="btn btn-primary mb-4">
+    + Add New Booking
+</a>
+
+<!-- ✅ Bookings Table -->
+<table class="table table-bordered table-hover shadow-sm">
+    <thead class="table-dark text-white">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Resource)</th>
+            <th>@Html.DisplayNameFor(model => model.StartTime)</th>
+            <th>@Html.DisplayNameFor(model => model.EndTime)</th>
+            <th>@Html.DisplayNameFor(model => model.BookedBy)</th>
+            <th>@Html.DisplayNameFor(model => model.Purpose)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Resource?.Name</td>
+                <td>@item.StartTime.ToString("g")</td>
+                <td>@item.EndTime.ToString("g")</td>
+                <td>@item.BookedBy</td>
+                <td>@item.Purpose</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-primary me-1" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-sm btn-outline-info me-1" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

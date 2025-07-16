@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container text-center mt-5" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <div class="p-5 mb-4 bg-light rounded-3 shadow-sm">
+        <div class="container py-5">
+            <h1 class="display-5 fw-bold mb-3 text-primary">Welcome to the Resource Booking System</h1>
+            <p class="fs-5 text-muted">Manage your company’s shared resources effortlessly and avoid double bookings.</p>
+            <div class="mt-4">
+                <a asp-controller="Resources" asp-action="Index" class="btn btn-outline-primary btn-lg me-2">View Resources</a>
+                <a asp-controller="Bookings" asp-action="Index" class="btn btn-outline-success btn-lg">View Bookings</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer mt-auto py-3 bg-dark text-white">
+    <div class="container text-center">
+        <span>
+            Learn more about
+            <a href="https://learn.microsoft.com/aspnet/core" target="_blank" rel="noopener noreferrer" class="text-info text-decoration-underline">building Web apps with ASP.NET Core</a>.
+        </span>
+    </div>
+</footer>
