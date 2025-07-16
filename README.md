@@ -70,16 +70,15 @@ Initial seed data for resources added in OnModelCreating.
 
 
 ---
-## 🖼️ Screenshots
+## Screenshots
 
-### Booking Creation  
-![Booking Creation](./Screenshots/booking-create.png)
+### 🏠 Homepage
+![Homepage](Screenshots/Home_Page.png)
 
-### Booking Conflict Error  
-![Booking Conflict](./Screenshots/booking-conflict.png)
+### ➕ Add Resource Form
+![Add Resource](Screenshots/add-resource-form.png)
 
-### Booking Filter  
-![Booking Filter](./Screenshots/booking-filter.png)
+### ⚠️ Booking Conflict Message
+![Conflict Message](Screenshots/booking-conflict.png)
 
-### Upcoming Bookings per Resource  
 ![Upcoming Bookings](./Screenshots/upcoming-bookings.png)
