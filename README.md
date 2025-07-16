@@ -67,3 +67,19 @@ Uses ApplicationDbContext with DbSet<Resource> and DbSet<Booking>.
 Booking entity has a foreign key relationship with Resource.
 
 Initial seed data for resources added in OnModelCreating.
+
+
+---
+## 🖼️ Screenshots
+
+### Booking Creation  
+![Booking Creation](./Screenshots/booking-create.png)
+
+### Booking Conflict Error  
+![Booking Conflict](./Screenshots/booking-conflict.png)
+
+### Booking Filter  
+![Booking Filter](./Screenshots/booking-filter.png)
+
+### Upcoming Bookings per Resource  
+![Upcoming Bookings](./Screenshots/upcoming-bookings.png)
